@@ -1,9 +1,13 @@
 function createStore(initialState) {
   let currentState = initialState;
-
+  const listeners = new Set();
   return {
     getState: () => currentState,
     setState: (newState) => (currentState = newState),
+    subscribe: (listener) => {
+      listeners.add(listener);
+      return listeners.delete(listener);
+    },
   };
 }
 

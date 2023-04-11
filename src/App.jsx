@@ -12,7 +12,7 @@ function IncrementValue({ item }) {
           [item]: state[item] + 1,
         });
       }}
-      className="px-10 py-3 mx-10 bg-slate-500"
+      className="px-10 py-3 mx-10 bg-slate-500 my-5"
     >
       Increment {item}
     </button>
@@ -20,8 +20,8 @@ function IncrementValue({ item }) {
 }
 
 function DisplayValue({item}) {
-  return <div>
-    {item}: {store.getState()[item]}
+  return <div className="px-10 py-3 mx-10 bg-slate-500 my-5">
+    {item} :   {store.getState()[item]}
   </div>
 }
 
