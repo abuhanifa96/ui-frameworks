@@ -1,16 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import './index.css'
+import "./App.css";
+import "./index.css";
+import store from "./store/store";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function IncrementValue({ item }) {
   return (
-    <div >
-      home
-      <p className='text-red-700'> hi</p>
-    </div>
-  )
+    <button
+      onClick={() => {
+        const state = store.getState();
+        store.setState({
+          ...state,
+          [item]: state[item] + 1,
+        });
+      }}
+      className="px-10 py-3 mx-10 bg-slate-500"
+    >
+      Increment {item}
+    </button>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <div className="grid grid-cols-2 mt-10">
+      <IncrementValue item="value1" />
+      <IncrementValue item="value2" />
+    </div>
+  );
+}
+
+export default App;
