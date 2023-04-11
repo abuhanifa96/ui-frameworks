@@ -1,6 +1,7 @@
 import "./App.css";
 import "./index.css";
 import store from "./store/store";
+import useStore from "./store/useStore";
 
 function IncrementValue({ item }) {
   return (
@@ -21,7 +22,7 @@ function IncrementValue({ item }) {
 
 function DisplayValue({item}) {
   return <div className="px-10 py-3 mx-10 bg-slate-500 my-5">
-    {item} :   {store.getState()[item]}
+    {item} :   {useStore((state)=>state[item])}
   </div>
 }
 

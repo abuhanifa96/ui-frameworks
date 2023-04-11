@@ -9,7 +9,7 @@ function createStore(initialState) {
     },
     subscribe: (listener) => {
       listeners.add(listener);
-      return listeners.delete(listener);
+      return () => listeners.delete(listener);
     },
   };
 }
