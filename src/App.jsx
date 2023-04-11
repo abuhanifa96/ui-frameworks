@@ -19,11 +19,20 @@ function IncrementValue({ item }) {
   );
 }
 
+function DisplayValue({item}) {
+  return <div>
+    {item}: {store.getState()[item]}
+  </div>
+}
+
+
 function App() {
   return (
     <div className="grid grid-cols-2 mt-10">
       <IncrementValue item="value1" />
+      <DisplayValue item="value1" />
       <IncrementValue item="value2" />
+      <DisplayValue item="value2" />
     </div>
   );
 }
