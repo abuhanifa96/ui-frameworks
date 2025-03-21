@@ -1,17 +1,9 @@
-// index.jsx
-import { Popover } from "radix-ui";
-import * as React from "react";
+import { Navbar } from "./components/Nav";
 
-const PopoverDemo = () => (
-  <Popover.Root>
-    <Popover.Trigger>More info</Popover.Trigger>
-    <Popover.Portal>
-      <Popover.Content>
-        Some more info…
-        <Popover.Arrow />
-      </Popover.Content>
-    </Popover.Portal>
-  </Popover.Root>
-);
-
-export default PopoverDemo;
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-950">
+      <Navbar />
+    </div>
+  );
+}
